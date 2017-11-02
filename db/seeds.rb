@@ -5,3 +5,31 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+
+Ingredient.destroy_all
+Cocktail.destroy_all
+
+Ingredient.create(name: "lemon")
+Ingredient.create(name: "minth")
+Ingredient.create(name: "ginger")
+Ingredient.create(name: "vodka")
+Ingredient.create(name: "martini")
+Ingredient.create(name: "gin")
+Ingredient.create(name: "soda")
+Ingredient.create(name: "tonic")
+
+10.times do
+  cocktail = Cocktail.new(
+    name: Faker::DragonBall.character
+    )
+  cocktail.save!
+  puts "#{cocktail.name}"
+  end
+
+# 10.times do
+
+# end
+
+  puts "finished"
